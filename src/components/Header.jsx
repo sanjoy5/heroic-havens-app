@@ -13,7 +13,7 @@ const Header = () => {
     </>
 
     return (
-        <div className=' bg-base-200'>
+        <div className=' py-5'>
             <div className="navbar max-w-7xl mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -24,7 +24,7 @@ const Header = () => {
                             {links}
                         </ul>
                     </div>
-                    <Link className="text-xl md:text-2xl font-bold">HeroicHavens</Link>
+                    <Link className="text-xl md:text-3xl text-blue-500 font-bold">HeroicHavens</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 space-x-6">

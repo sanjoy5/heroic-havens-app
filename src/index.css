@@ -1,3 +1,76 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: white !important;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 20px !important;
+    padding: 10px;
+
+}
+
+.banner1,
+.banner2,
+.banner3,
+.banner4 {
+    width: 100%;
+    height: 550px;
+}
+
+.banner1::before {
+    content: '';
+    position: absolute;
+    background: url('https://i.ibb.co/SPH372R/iron-man-ge70505e17-1920.jpg');
+    background-position: top center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    filter: brightness(0.4);
+    opacity: 0.8;
+}
+
+.banner2::before {
+    content: '';
+    position: absolute;
+    background: url('https://i.ibb.co/mtxHtnS/toy-gf9f23209b-1920.jpg');
+    background-position: top top;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    filter: brightness(0.4);
+    opacity: 0.8;
+}
+
+.banner3::before {
+    content: '';
+    position: absolute;
+    background: url('https://i.ibb.co/mvttR6m/storm-troopers-g32ec9beb0-1920.jpg');
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    filter: brightness(0.4);
+    opacity: 0.9;
+}
+
+.banner4::before {
+    content: '';
+    position: absolute;
+    background: url('https://i.ibb.co/tq8NbB0/51322-LEGO.png');
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    filter: brightness(0.4);
+    opacity: 0.9;
+}
