@@ -2,10 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineBars } from 'react-icons/ai';
 import { useAuthProvider } from '../AuthProvider/AuthProvider';
+import ActiveLink from './ActiveLink';
 
 const Header = () => {
 
-    const { user, logOut } = useAuthProvider()
+    const { user, logOut, loading } = useAuthProvider()
 
     const handleLogOut = () => {
         logOut()
@@ -17,16 +18,16 @@ const Header = () => {
     }
 
     const links = <>
-        <Link className='text-lg' to='/'>Home</Link>
-        <Link className='text-lg' to='/all-toys'>All Toys</Link>
+        <ActiveLink to='/'>Home</ActiveLink>
+        <ActiveLink to='/all-toys'>All Toys</ActiveLink>
         {
             user && <>
-                <Link className='text-lg' to='/my-toys'>My Toys</Link>
-                <Link className='text-lg' to='/add-toys'>Add a Toy</Link>
+                <ActiveLink to='/my-toys'>My Toys</ActiveLink>
+                <ActiveLink to='/add-toys'>Add a Toy</ActiveLink>
             </>
         }
 
-        <Link className='text-lg' to='/blogs'>Blogs</Link>
+        <ActiveLink to='/blogs'>Blogs</ActiveLink>
     </>
 
     return (
@@ -44,25 +45,26 @@ const Header = () => {
                     <Link className="text-xl md:text-3xl text-blue-500 font-bold">HeroicHavens</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 space-x-6">
+                    <ul className="menu menu-horizontal px-1 space-x-6 text-lg">
                         {links}
                     </ul>
                 </div>
                 <div className="navbar-end">
 
                     {
-                        user ? <>
-                            <Link to='/profie'>
-                                <div className="flex items-center">
-                                    <img src={user?.photoURL} className='w-10 h-10 md:h-[45px] md:w-[45px] rounded-full object-cover mr-2 ' alt="" />
-                                    <div className="hidden md:block">
-                                        <p className="text-sm text-gray-600 leading-4">Welcome</p>
-                                        <p className="text-lg text-gray-900 leading-5">{user?.displayName}</p>
+                        user ?
+                            <>
+                                <Link to='/profie'>
+                                    <div className="flex items-center">
+                                        <img src={user?.photoURL} className='w-10 h-10 md:h-[45px] md:w-[45px] rounded-full object-cover mr-2 ' alt="" />
+                                        <div className="hidden md:block">
+                                            <p className="text-sm text-gray-600 leading-4">Welcome</p>
+                                            <p className="text-lg text-gray-900 leading-5">{user?.displayName}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </Link>
-                            <button onClick={handleLogOut} className=" md:ml-5 inline-flex text-white bg-blue-500 border-0 py-2 px-4 md:px-6 focus:outline-none hover:bg-blue-600 rounded md:text-lg">Logout</button>
-                        </>
+                                </Link>
+                                <button onClick={handleLogOut} className=" md:ml-5 inline-flex text-white bg-blue-500 border-0 py-2 px-4 md:px-6 focus:outline-none hover:bg-blue-600 rounded md:text-lg">Logout</button>
+                            </>
                             : <>
                                 <Link to='/login' className="inline-flex text-white bg-blue-500 border-0 py-2 px-4 md:px-6 focus:outline-none hover:bg-blue-600 rounded md:text-lg">Login</Link>
                                 <Link to='/signup' className="hidden md:inline-flex ml-4  text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">Signup</Link>

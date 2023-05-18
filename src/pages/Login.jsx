@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { BsGoogle } from 'react-icons/bs';
 import { useAuthProvider } from '../AuthProvider/AuthProvider';
 
@@ -7,6 +7,9 @@ const Login = () => {
     const { loginUserWithEmailPassword } = useAuthProvider()
     const [error, setError] = useState('')
     const navigate = useNavigate()
+    let location = useLocation()
+
+    let from = location.state?.from?.pathname || '/'
 
     const handleLogin = (event) => {
         event.preventDefault()
@@ -17,7 +20,7 @@ const Login = () => {
         loginUserWithEmailPassword(email, password)
             .then(result => {
                 const loggedUser = result.user
-                navigate('/')
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 setError(error.message)

@@ -19,6 +19,10 @@ body {
 
 }
 
+.active {
+    color: #2563EB;
+}
+
 .banner1,
 .banner2,
 .banner3,

@@ -5,6 +5,12 @@ import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Signup from '../pages/Signup';
 import Success from '../pages/Success';
+import AllToys from '../pages/AllToys';
+import MyToys from '../pages/MyToys';
+import PrivateRoute from './PrivateRoute';
+import AddToys from '../pages/AddToys';
+import Blogs from '../pages/Blogs';
+import ErrorPage from '../pages/ErrorPage';
 
 const router = createBrowserRouter([
     {
@@ -14,6 +20,22 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
+            },
+            {
+                path: "/all-toys",
+                element: <AllToys></AllToys>,
+            },
+            {
+                path: "/my-toys",
+                element: <PrivateRoute><MyToys></MyToys></PrivateRoute>,
+            },
+            {
+                path: "/add-toys",
+                element: <PrivateRoute><AddToys></AddToys></PrivateRoute>,
+            },
+            {
+                path: "/blogs",
+                element: <Blogs></Blogs>,
             },
             {
                 path: "/login",
@@ -28,7 +50,11 @@ const router = createBrowserRouter([
     {
         path: "/success",
         element: <Success></Success>
-    }
+    },
+    {
+        path: "*",
+        element: <ErrorPage></ErrorPage>
+    },
 ]);
 
 export default router;
