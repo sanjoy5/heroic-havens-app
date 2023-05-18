@@ -32,6 +32,8 @@ body {
     height: 550px;
 }
 
+
+
 .banner1::before {
     content: '';
     position: absolute;
@@ -91,7 +93,8 @@ body {
 .headerBanner::before {
     content: '';
     position: absolute;
-    background: url('https://i.ibb.co/J2xB1bZ/captain-america-ga7167802e-1920.jpg');
+    /* background: url('https://i.ibb.co/J2xB1bZ/captain-america-ga7167802e-1920.jpg'); */
+    background: url('https://i.ibb.co/FJtKXct/0xv62x8v1r561.jpg');
     background-position: center center;
     background-size: cover;
     width: 100%;

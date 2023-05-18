@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { useAuthProvider } from '../AuthProvider/AuthProvider';
 import Select from 'react-select';
+import Swal from 'sweetalert2'
+
 
 
 const AddToys = () => {
     const { user } = useAuthProvider()
     const [selectedOption, setSelectedOption] = useState(null);
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         data.subcategory = selectedOption
         console.log(data)
@@ -24,6 +26,16 @@ const AddToys = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        position: 'center-center',
+                        icon: 'success',
+                        title: 'Successfully Added a Toys',
+                        showConfirmButton: false,
+                        timer: 1500,
+                    })
+                }
+                reset()
             })
 
     }
@@ -47,7 +59,7 @@ const AddToys = () => {
 
         <div>
 
-            <div className="headerBanner w-full h-[200px] md:h-[300px]  py-10  flex items-center justify-center flex-col">
+            <div className="headerBanner bg-gradient-to-r from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0.5)] w-full h-[200px] md:h-[300px]  py-10  flex items-center justify-center flex-col">
                 <h2 className="text-2xl md:text-4xl text-white font-bold mb-3">Add a Toy</h2>
                 <p className="text-xl text-white"><Link to='/' className='text-blue-500'>Home</Link>/AddToys</p>
             </div>
