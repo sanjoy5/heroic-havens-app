@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 .swiper-button-next,
 .swiper-button-prev {
     color: white !important;
@@ -39,7 +43,7 @@
 .banner2::before {
     content: '';
     position: absolute;
-    background: url('https://i.ibb.co/mtxHtnS/toy-gf9f23209b-1920.jpg');
+    background: url('https://i.ibb.co/FJtKXct/0xv62x8v1r561.jpg');
     background-position: top top;
     background-size: cover;
     width: 100%;
@@ -59,18 +63,23 @@
     height: 100%;
     z-index: -100;
     filter: brightness(0.4);
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 .banner4::before {
     content: '';
     position: absolute;
     background: url('https://i.ibb.co/tq8NbB0/51322-LEGO.png');
-    background-position: center center;
+    background-position: top center;
     background-size: cover;
     width: 100%;
     height: 100%;
     z-index: -100;
     filter: brightness(0.4);
-    opacity: 0.9;
+    opacity: 0.8;
+}
+
+.offer:hover img {
+    transition: all .5s ease;
+    transform: scale(1.1)
 }
