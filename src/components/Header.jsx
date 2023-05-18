@@ -31,7 +31,7 @@ const Header = () => {
     </>
 
     return (
-        <div className=' py-2 bg-blue-50'>
+        <div className=' py-2 bg-slate-50'>
             <div className="navbar max-w-7xl mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
