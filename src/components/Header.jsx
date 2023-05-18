@@ -33,7 +33,8 @@ const Header = () => {
                 </div>
                 <div className="navbar-end">
                     <Link to=''> <img src="https://i.ibb.co/Qdg22Y8/user1.png" className='h-[40px] w-[40px] rounded-full object-cover mr-4 ' alt="" /></Link>
-                    <Link className="btn">Login</Link>
+                    <Link to='/login' className="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">Login</Link>
+                    <Link to='/signup' className="ml-0 md:ml-4 inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">Register</Link>
                 </div>
             </div>
         </div>
