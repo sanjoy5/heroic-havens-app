@@ -1,14 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineBars } from 'react-icons/ai';
+import { useAuthProvider } from '../AuthProvider/AuthProvider';
 
 const Header = () => {
+
+    const { user, logOut } = useAuthProvider()
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => {
+                console.log(error.message);
+            })
+
+    }
 
     const links = <>
         <Link className='text-lg' to='/'>Home</Link>
         <Link className='text-lg' to='/all-toys'>All Toys</Link>
-        <Link className='text-lg' to='/my-toys'>My Toys</Link>
-        <Link className='text-lg' to='/add-toys'>Add a Toy</Link>
+        {
+            user && <>
+                <Link className='text-lg' to='/my-toys'>My Toys</Link>
+                <Link className='text-lg' to='/add-toys'>Add a Toy</Link>
+            </>
+        }
+
         <Link className='text-lg' to='/blogs'>Blogs</Link>
     </>
 
@@ -32,9 +49,26 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to=''> <img src="https://i.ibb.co/Qdg22Y8/user1.png" className='h-[40px] w-[40px] rounded-full object-cover mr-4 ' alt="" /></Link>
-                    <Link to='/login' className="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">Login</Link>
-                    <Link to='/signup' className="ml-0 md:ml-4 inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">Register</Link>
+
+                    {
+                        user ? <>
+                            <Link to='/profie'>
+                                <div className="flex items-center">
+                                    <img src={user?.photoURL} className='w-10 h-10 md:h-[45px] md:w-[45px] rounded-full object-cover mr-2 ' alt="" />
+                                    <div className="hidden md:block">
+                                        <p className="text-sm text-gray-600 leading-4">Welcome</p>
+                                        <p className="text-lg text-gray-900 leading-5">{user?.displayName}</p>
+                                    </div>
+                                </div>
+                            </Link>
+                            <button onClick={handleLogOut} className=" md:ml-5 inline-flex text-white bg-blue-500 border-0 py-2 px-4 md:px-6 focus:outline-none hover:bg-blue-600 rounded md:text-lg">Logout</button>
+                        </>
+                            : <>
+                                <Link to='/login' className="inline-flex text-white bg-blue-500 border-0 py-2 px-4 md:px-6 focus:outline-none hover:bg-blue-600 rounded md:text-lg">Login</Link>
+                                <Link to='/signup' className="hidden md:inline-flex ml-4  text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">Signup</Link>
+                            </>
+                    }
+
                 </div>
             </div>
         </div>
