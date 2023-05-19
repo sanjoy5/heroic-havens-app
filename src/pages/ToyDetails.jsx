@@ -14,7 +14,7 @@ const ToyDetails = () => {
                     <div class="w-full mx-auto flex flex-wrap">
                         <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded border" src={photo} />
                         <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-                            <h2 class="text-sm title-font text-gray-500 tracking-widest">{subcategory.value}</h2>
+                            <h2 class="text-sm title-font text-gray-500 tracking-widest">{subcategory?.value}</h2>
                             <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{name}</h1>
                             <div class="flex mb-4">
                                 <span class="flex items-center">
@@ -28,7 +28,7 @@ const ToyDetails = () => {
 
                             </div>
                             <p class="title-font font-medium text-2xl text-gray-900 mb-3">৳ {price}</p>
-                            <p class="leading-relaxed"><strong>Description: </strong> {description}</p>
+                            <p class="leading-relaxed"><strong>Description: </strong> {description && description}</p>
 
 
 

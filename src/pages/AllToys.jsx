@@ -34,7 +34,7 @@ const AllToys = () => {
             </div>
 
 
-            <div className="flex gap-4 items-center w-full my-16">
+            <div className="flex gap-4 items-center justify-center w-full my-16">
                 <div className="w-full max-w-md flex items-center gap-2">
                     <input onChange={(e) => setSearchText(e.target.value)} type="search" name="search" class="w-full bg-white rounded border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                     <button onClick={handleSearch} class="text-white bg-blue-500 border-0 py-2 px-4 md:px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">Search</button>
@@ -46,48 +46,46 @@ const AllToys = () => {
 
 
 
-            <div class=" w-full mx-auto overflow-auto mb-16">
-                <table class="table-auto w-full text-left whitespace-no-wrap whitespace-nowrap">
-                    <thead>
-                        <tr>
-                            <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tl rounded-bl">SN</th>
-                            <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Seller</th>
-                            <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Toy Name</th>
-                            <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Sub Category</th>
-                            <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Price</th>
-                            <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Quantity</th>
-                            <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Details</th>
-                            <th class="w-10 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tr rounded-br"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            allToys?.map((toy, idx) => {
-                                const { _id, seller, name, subcategory, price, quantity } = toy;
+            <div class=" w-full mx-auto mb-16">
 
-                                return (
+                <section class="text-gray-600 body-font">
+                    <div class="container px-5 mx-auto flex flex-wrap">
+                        <div class="flex flex-wrap -m-4">
 
-                                    <tr key={_id}>
-                                        <td class="border-b-2 border-gray-200 px-4 py-3">{idx + 1}</td>
-                                        <td class="border-b-2 border-gray-200 px-4 py-3">{seller}</td>
-                                        <td class="border-b-2 border-gray-200 px-4 py-3">{name}</td>
-                                        <td class="border-b-2 border-gray-200 px-4 py-3">{subcategory.value}</td>
-                                        <td class="border-b-2 border-gray-200 px-4 py-3 text-lg text-gray-900">Tk {price}</td>
-                                        <td class="border-b-2 border-gray-200 px-4 py-3">{quantity} Pcs</td>
-                                        <td class="border-b-2 border-gray-200 px-4 py-3">
-                                            <Link to={`/toys/${_id}`} class="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0">View Details
-                                                <BsArrowRight className="ml-2 text-lg" />
-                                            </Link>
-                                        </td>
-                                    </tr>
+                            {
+                                allToys?.map((toy, idx) => {
+                                    const { _id, seller, name, subcategory, price, quantity, photo, description } = toy;
+                                    return (
+                                        <>
+                                            <div class="p-4 lg:w-1/2 md:w-full">
+                                                <div class="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col">
+                                                    <div class="w-full md:w-1/3 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center">
+                                                        <img src={photo} alt="" />
+                                                    </div>
+                                                    <div class="w-full md:w-2/3">
+                                                        <h2 class="text-sm title-font text-gray-500 tracking-widest">{subcategory?.value}</h2>
+                                                        <h2 class="text-gray-900 text-lg title-font font-medium mb-3">{name}</h2>
+                                                        <p class="leading-relaxed text-base mb-1">{description && description.slice(0, 70)}...</p>
+                                                        <p class="leading-relaxed text-base font-semibold mb-1">৳ {price}</p>
+                                                        <p class="leading-relaxed text-base mb-1">Qty: {quantity} pcs</p>
+                                                        <p class="leading-relaxed text-base ">Seller: {seller}</p>
 
-                                )
-                            })
-                        }
+                                                        <Link to={`/toys/${_id}`} class="mt-3 text-blue-500 inline-flex items-center">View Details
+                                                            <BsArrowRight className="ml-2 text-lg" />
+                                                        </Link>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </>
+                                    )
+                                })
+
+                            }
 
 
-                    </tbody>
-                </table>
+                        </div>
+                    </div>
+                </section>
             </div>
 
 
