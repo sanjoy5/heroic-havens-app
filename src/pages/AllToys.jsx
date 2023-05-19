@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import { BsArrowRight } from 'react-icons/bs';
 
 const AllToys = () => {
 
@@ -61,10 +62,8 @@ const AllToys = () => {
                                         <td class="border-b-2 border-gray-200 px-4 py-3 text-lg text-gray-900">Tk {price}</td>
                                         <td class="border-b-2 border-gray-200 px-4 py-3">{quantity} Pcs</td>
                                         <td class="border-b-2 border-gray-200 px-4 py-3">
-                                            <Link to='' class="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0">View Details
-                                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                                                </svg>
+                                            <Link to={`/toys/${_id}`} class="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0">View Details
+                                                <BsArrowRight className="ml-2 text-lg" />
                                             </Link>
                                         </td>
                                     </tr>
