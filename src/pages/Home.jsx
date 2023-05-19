@@ -3,6 +3,8 @@ import Banner from '../components/Banner';
 import Offer from '../components/Offer';
 import Gallary from '../components/Gallary';
 import ToysTab from '../components/ToysTab';
+import DownloadApp from '../components/DownloadApp';
+import CallToAction from '../components/CallToAction';
 
 const Home = () => {
     return (
@@ -11,6 +13,8 @@ const Home = () => {
             <Offer></Offer>
             <Gallary></Gallary>
             <ToysTab></ToysTab>
+            <CallToAction></CallToAction>
+            <DownloadApp></DownloadApp>
         </div>
     );
 };

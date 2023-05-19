@@ -2,7 +2,7 @@ import React from 'react';
 
 const Offer = () => {
     return (
-        <div className='mt-24 mb-16'>
+        <div className='mt-10 md:mt-16 mb-16'>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 <div className="grid grid-cols-2 items-center justify-center border shadow px-5 md:px-8 py-8 offer">
                     <div className="">

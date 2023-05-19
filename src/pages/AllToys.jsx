@@ -47,7 +47,7 @@ const AllToys = () => {
 
 
 
-            <div class=" w-full mx-auto mb-16">
+            <div class=" w-full mx-auto pb-16">
 
                 <section class="text-gray-600 body-font">
                     <div class="container px-5 mx-auto flex flex-wrap">

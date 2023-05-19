@@ -65,7 +65,7 @@ const AddToys = () => {
             </div>
 
 
-            <div class="lg:w-2/3 md:w-1/2 bg-white flex flex-col md:mx-auto w-full md:py-24 mt-8 md:mt-0">
+            <div class="lg:w-2/3 md:w-1/2 bg-white flex flex-col md:mx-auto w-full md:pt-24 md:pb-12 mt-8 md:mt-0">
 
                 <form onSubmit={handleSubmit(onSubmit)} >
 

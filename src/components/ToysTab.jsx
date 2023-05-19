@@ -19,7 +19,7 @@ const ToysTab = () => {
 
     return (
         <div className='mt-16'>
-            <div class="flex flex-col text-center w-full mb-6">
+            <div class="flex flex-col text-center w-full mb-12">
                 <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Shop by Category</h1>
                 <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Explore our wide range of products, conveniently categorized for a seamless shopping experience</p>
             </div>

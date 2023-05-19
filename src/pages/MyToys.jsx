@@ -4,7 +4,7 @@ import { useAuthProvider } from '../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2'
 
 const MyToys = () => {
-    const { user } = useAuthProvider()
+    const { user, loading } = useAuthProvider()
     const [toys, setToys] = useState([])
     const [searchText, setSearchText] = useState('')
     const [showBtn, setShowBtn] = useState(false)
@@ -79,7 +79,6 @@ const MyToys = () => {
 
 
             {
-
                 toys.length !== 0 ? (
                     <>
                         <div className="flex gap-4 items-center justify-center w-full my-16">

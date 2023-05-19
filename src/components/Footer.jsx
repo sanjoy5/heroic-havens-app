@@ -12,7 +12,7 @@ const Footer = () => {
                         <p className="mb-4 text-gray-600">Hotline: +8801XXXXXXXXX</p>
 
                         {/* <h2 class="title-font font-medium text-gray-900 tracking-widest  mb-3 uppercase">Follow Us On</h2> */}
-                        <span className=" flex space-x-3">
+                        <span className=" flex space-x-3 itmes-center justify-center md:justify-start  mb-10">
                             <FaFacebookF className='cursor-pointer text-lg hover:text-blue-500' />
                             <FaInstagram className='cursor-pointer text-lg hover:text-blue-500' />
                             <FaTwitter className='cursor-pointer text-lg hover:text-blue-500' />
@@ -20,7 +20,7 @@ const Footer = () => {
                         </span>
 
                     </div>
-                    <div class="lg:w-1/4 md:w-1/2 w-full px-4 grid justify-items-center">
+                    <div class="lg:w-1/4 md:w-1/2 w-full px-4 lg:grid lg:justify-items-center">
                         <h2 class="title-font font-medium text-gray-900 tracking-widest uppercase mb-3">Categories</h2>
                         <nav class="list-none mb-10">
                             <li>
@@ -37,7 +37,7 @@ const Footer = () => {
                             </li>
                         </nav>
                     </div>
-                    <div class="lg:w-1/4 md:w-1/2 w-full px-4 grid justify-items-center">
+                    <div class="lg:w-1/4 md:w-1/2 w-full px-4 lg:grid lg:justify-items-center">
                         <h2 class="title-font font-medium text-gray-900 tracking-widest uppercase mb-3">Categories</h2>
                         <nav class="list-none mb-10">
                             <li>
@@ -57,7 +57,7 @@ const Footer = () => {
                     <div class="lg:w-1/4 md:w-1/2 w-full px-4">
                         <h2 class="title-font font-medium text-gray-900 tracking-widest  mb-3">SUBSCRIBE</h2>
                         <div class="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start">
-                            <div class="relative w-40 sm:w-auto xl:mr-2 lg:mr-0 sm:mr-2 mr-2">
+                            <div class="relative max-w-40 sm:w-auto xl:mr-2 lg:mr-0 sm:mr-2 mr-2">
 
                                 <input type="text" id="footer-field" name="footer-field" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-blue-200 focus:border-blue-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                             </div>
