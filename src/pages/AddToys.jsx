@@ -30,7 +30,7 @@ const AddToys = () => {
                     Swal.fire({
                         position: 'center-center',
                         icon: 'success',
-                        title: 'Successfully Added a Toys',
+                        title: 'Successfully Added Your Toy',
                         showConfirmButton: false,
                         timer: 1500,
                     })
@@ -60,7 +60,7 @@ const AddToys = () => {
         <div>
 
             <div className="headerBanner bg-gradient-to-r from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0.5)] w-full h-[200px] md:h-[300px]  py-10  flex items-center justify-center flex-col">
-                <h2 className="text-2xl md:text-4xl text-white font-bold mb-3">Add a Toy</h2>
+                <h2 className="text-2xl md:text-4xl text-white font-bold mb-3">Add Your Toys</h2>
                 <p className="text-xl text-white"><Link to='/' className='text-blue-500'>Home</Link>/AddToys</p>
             </div>
 
@@ -110,12 +110,6 @@ const AddToys = () => {
 
                     <div class="relative mb-4 w-full">
                         <label for="quantity" class="leading-7 text-sm text-gray-600">Sub Category</label>
-                        {/* <select {...register("subcategory")} className='w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-3 px-3 leading-8 transition-colors duration-200 ease-in-out'>
-                            <option value="avengers">Avengers</option>
-                            <option value="dc">DC</option>
-                            <option value="Star war">DC</option>
-                            <option value="transformar">Transformar</option>
-                        </select> */}
 
                         <Select styles={customStyles}
                             defaultValue={selectedOption}
