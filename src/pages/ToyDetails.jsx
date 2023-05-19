@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
+import Ratings from '../components/Ratings';
 
 const ToyDetails = () => {
 
@@ -18,12 +19,7 @@ const ToyDetails = () => {
                             <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{name}</h1>
                             <div class="flex mb-4">
                                 <span class="flex items-center">
-                                    <FaStar className='text-blue-500' />
-                                    <FaStar className='text-blue-500' />
-                                    <FaStar className='text-blue-500' />
-                                    <FaStarHalfAlt className='text-blue-500' />
-                                    <FaRegStar className='text-blue-500' />
-                                    <span class="text-gray-600 ml-3">4 Reviews</span>
+                                    <Ratings value={rating} text={`(${rating} Stars)`} color={'#2563EB'} />
                                 </span>
 
                             </div>

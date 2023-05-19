@@ -129,7 +129,7 @@ const UpdateToys = () => {
                         <label for="description" class="leading-7 text-sm text-gray-600">Description</label>
                         <textarea id="description" defaultValue={description} {...register("description", { required: true })} class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 h-24 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
                     </div>
-                    <input type="submit" class="mt-3 w-full text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg" value='Add a Toy' />
+                    <input type="submit" class="mt-3 w-full text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg" value='Update Your Toy' />
                 </form>
 
             </div>

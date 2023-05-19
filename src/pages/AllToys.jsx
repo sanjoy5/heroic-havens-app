@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { BsArrowRight } from 'react-icons/bs';
+import Ratings from '../components/Ratings';
 
 const AllToys = () => {
 
@@ -54,18 +55,19 @@ const AllToys = () => {
 
                             {
                                 allToys?.map((toy, idx) => {
-                                    const { _id, seller, name, subcategory, price, quantity, photo, description } = toy;
+                                    const { _id, seller, name, subcategory, price, quantity, photo, description, rating } = toy;
                                     return (
                                         <>
-                                            <div class="p-4 lg:w-1/2 md:w-full">
+                                            <div key={_id} class="p-4 lg:w-1/2 md:w-full">
                                                 <div class="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col">
                                                     <div class="w-full md:w-1/3 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center">
                                                         <img src={photo} alt="" />
                                                     </div>
                                                     <div class="w-full md:w-2/3">
                                                         <h2 class="text-sm title-font text-gray-500 tracking-widest">{subcategory?.value}</h2>
-                                                        <h2 class="text-gray-900 text-lg title-font font-medium mb-3">{name}</h2>
-                                                        <p class="leading-relaxed text-base mb-1">{description && description.slice(0, 70)}...</p>
+                                                        <h2 class="text-gray-900 text-lg title-font font-medium mb-1">{name}</h2>
+                                                        <Ratings value={rating} text={`(${rating} Stars)`} color={'#2563EB'} />
+                                                        <p class="leading-relaxed text-base mb-1 mt-3">{description && description.slice(0, 70)}...</p>
                                                         <p class="leading-relaxed text-base font-semibold mb-1">৳ {price}</p>
                                                         <p class="leading-relaxed text-base mb-1">Qty: {quantity} pcs</p>
                                                         <p class="leading-relaxed text-base ">Seller: {seller}</p>
