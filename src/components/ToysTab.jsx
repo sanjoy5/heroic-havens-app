@@ -18,8 +18,8 @@ const ToysTab = () => {
     }, [toys])
 
     return (
-        <div className='my-16'>
-            <div class="flex flex-col text-center w-full mb-12">
+        <div className='mt-16'>
+            <div class="flex flex-col text-center w-full mb-6">
                 <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Shop by Category</h1>
                 <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Explore our wide range of products, conveniently categorized for a seamless shopping experience</p>
             </div>
@@ -29,6 +29,7 @@ const ToysTab = () => {
                     <Tab onClick={() => setSelectedCategory('Avengers')} className="custom-tab">Avengers</Tab>
                     <Tab onClick={() => setSelectedCategory('DC')} className="custom-tab">DC</Tab>
                     <Tab onClick={() => setSelectedCategory('Star Wars')} className="custom-tab">Star Wars</Tab>
+                    <Tab onClick={() => setSelectedCategory('Transformers')} className="custom-tab">Transformers</Tab>
                 </TabList>
 
                 <TabPanel>
@@ -40,8 +41,9 @@ const ToysTab = () => {
                 <TabPanel>
                     <Toys toys={toys} />
                 </TabPanel>
-
-
+                <TabPanel>
+                    <Toys toys={toys} />
+                </TabPanel>
             </Tabs>
 
         </div>

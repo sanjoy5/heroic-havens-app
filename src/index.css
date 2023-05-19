@@ -149,7 +149,7 @@ body {
 }
 
 .react-tabs__tab-panel {
-    padding: 50px 20px;
+    padding: 50px 0px;
     background-color: #fff;
     color: #333;
 }

@@ -4,7 +4,7 @@ const Gallary = () => {
     return (
         <div>
             <section class="text-gray-600 body-font">
-                <div class="container px-5 py-20 mx-auto flex flex-wrap">
+                <div class="container px-5 py-16 mx-auto flex flex-wrap">
                     <div class="flex w-full mb-20 flex-wrap">
                         <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 lg:w-1/3 lg:mb-0 mb-4">Explore Our Super Heros Toy Gallary</h1>
                         <p class="lg:pl-6 lg:w-2/3 mx-auto leading-relaxed text-base">Witness the ultimate gathering of superhero toys in our image gallery. From iconic action figures to collectible statues, immerse yourself in a world of heroic imagination and limitless adventures.</p>
