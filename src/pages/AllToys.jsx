@@ -7,6 +7,7 @@ const AllToys = () => {
     const toys = useLoaderData()
     const [allToys, setAllToys] = useState(toys)
     const [searchText, setSearchText] = useState('')
+    const [showBtn, setShowBtn] = useState(false)
 
 
     const handleSearch = () => {
@@ -15,8 +16,15 @@ const AllToys = () => {
             .then(data => {
                 // console.log(data, '###');
                 setAllToys(data)
+                setShowBtn(true)
             })
     }
+
+    const showAll = () => {
+        setAllToys(toys)
+        setShowBtn(false)
+    }
+
 
     return (
         <div>
@@ -26,9 +34,14 @@ const AllToys = () => {
             </div>
 
 
-            <div className="flex gap-2 items-center justify-center w-full max-w-md mx-auto my-16">
-                <input onChange={(e) => setSearchText(e.target.value)} type="search" name="search" class="w-full bg-white rounded border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
-                <button onClick={handleSearch} class="text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">Search</button>
+            <div className="flex gap-4 items-center w-full my-16">
+                <div className="w-full max-w-md flex items-center gap-2">
+                    <input onChange={(e) => setSearchText(e.target.value)} type="search" name="search" class="w-full bg-white rounded border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                    <button onClick={handleSearch} class="text-white bg-blue-500 border-0 py-2 px-4 md:px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">Search</button>
+                </div>
+                {showBtn &&
+                    <button onClick={showAll} class="text-white bg-blue-500 border-0 py-2 px-4 md:px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">All</button>
+                }
             </div>
 
 

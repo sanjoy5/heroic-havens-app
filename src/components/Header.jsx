@@ -56,7 +56,7 @@ const Header = () => {
                             <>
                                 <Link to='/profie'>
                                     <div className="flex items-center">
-                                        <div className="tooltip tooltip-bottom" data-tip={`Welcome, ${user?.displayName}`}>
+                                        <div className="tooltip tooltip-bottom z-10" data-tip={`Welcome, ${user?.displayName}`}>
                                             <img src={user?.photoURL} className='w-10 h-10 md:h-[45px] md:w-[45px] rounded-full object-cover mr-2 ' alt="" />
                                         </div>
                                         <div className="hidden md:block">
