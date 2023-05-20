@@ -26,8 +26,8 @@ const Toys = ({ toys }) => {
                                                 <Ratings value={rating} text={`(${rating} Stars)`} color={'#2563EB'} />
                                                 <p class="leading-relaxed text-base mb-1 mt-3">{description && description.slice(0, 70)}...</p>
                                                 <p class="leading-relaxed text-base font-semibold mb-1">৳ {price}</p>
-                                                <p class="leading-relaxed text-base mb-1">Qty: {quantity} pcs</p>
-                                                <p class="leading-relaxed text-base ">Seller: {seller}</p>
+                                                {/* <p class="leading-relaxed text-base mb-1">Qty: {quantity} pcs</p>
+                                                <p class="leading-relaxed text-base ">Seller: {seller}</p> */}
 
                                                 <Link to={`/toys/${_id}`} class="mt-3 text-blue-500 inline-flex items-center">View Details
                                                     <BsArrowRight className="ml-2 text-lg" />

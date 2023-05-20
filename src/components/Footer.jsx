@@ -22,7 +22,7 @@ const Footer = () => {
                     </div>
                     <div class="lg:w-1/4 md:w-1/2 w-full px-4 lg:grid lg:justify-items-center">
                         <h2 class="title-font font-medium text-gray-900 tracking-widest uppercase mb-3">Categories</h2>
-                        <nav class="list-none mb-10">
+                        <nav class="list-none mb-10 space-y-2">
                             <li>
                                 <a class="text-gray-600 hover:text-gray-800">Avengers</a>
                             </li>
@@ -38,19 +38,20 @@ const Footer = () => {
                         </nav>
                     </div>
                     <div class="lg:w-1/4 md:w-1/2 w-full px-4 lg:grid lg:justify-items-center">
-                        <h2 class="title-font font-medium text-gray-900 tracking-widest uppercase mb-3">Categories</h2>
-                        <nav class="list-none mb-10">
+                        <h2 class="title-font font-medium text-gray-900 tracking-widest uppercase mb-3">Quick Links</h2>
+                        <nav class="list-none mb-10 space-y-2">
                             <li>
-                                <a class="text-gray-600 hover:text-gray-800">Avengers</a>
+                                <a class="text-gray-600 hover:text-gray-800">Our Policy</a>
                             </li>
                             <li>
-                                <a class="text-gray-600 hover:text-gray-800">DC</a>
+                                <a class="text-gray-600 hover:text-gray-800">Quick Delivery</a>
+                            </li>
+
+                            <li>
+                                <a class="text-gray-600 hover:text-gray-800">About Us</a>
                             </li>
                             <li>
-                                <a class="text-gray-600 hover:text-gray-800">Star Wars</a>
-                            </li>
-                            <li>
-                                <a class="text-gray-600 hover:text-gray-800">Transformers</a>
+                                <a class="text-gray-600 hover:text-gray-800">Contact Us</a>
                             </li>
                         </nav>
                     </div>
@@ -59,7 +60,7 @@ const Footer = () => {
                         <div class="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start">
                             <div class="relative max-w-40 sm:w-auto xl:mr-2 lg:mr-0 sm:mr-2 mr-2">
 
-                                <input type="text" id="footer-field" name="footer-field" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-blue-200 focus:border-blue-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                                <input type="text" id="footer-field" name="footer-field" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-blue-200 focus:border-blue-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" placeholder='Email' />
                             </div>
                             <button class="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-blue-500 border-0 py-3 px-4 focus:outline-none hover:bg-blue-600 rounded"><FaArrowRight className='text-lg' /></button>
                         </div>
