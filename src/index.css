@@ -128,3 +128,8 @@ body {
 .post li {
     margin-left: 30px;
 }
+
+.swal2-confirm {
+    background: #2563eb !important;
+
+}

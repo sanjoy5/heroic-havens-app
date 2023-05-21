@@ -4,19 +4,21 @@ import { useForm } from "react-hook-form";
 import { useAuthProvider } from '../AuthProvider/AuthProvider';
 import Select from 'react-select';
 import Swal from 'sweetalert2'
+import useTitle from '../hooks/useTitle';
 
 
 
 const AddToys = () => {
     const { user } = useAuthProvider()
     const [selectedOption, setSelectedOption] = useState(null);
+    useTitle('Add Toys')
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         data.subcategory = selectedOption
         console.log(data)
 
-        fetch('http://127.0.0.1:5000/add-toys', {
+        fetch('https://toy-marketplace-heroichavens-server.vercel.app/add-toys', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -65,51 +67,51 @@ const AddToys = () => {
             </div>
 
 
-            <div class="lg:w-2/3 md:w-1/2 bg-white flex flex-col md:mx-auto w-full md:pt-24 md:pb-12 mt-8 md:mt-0">
+            <div className="lg:w-2/3 md:w-1/2 bg-white flex flex-col md:mx-auto w-full md:pt-24 md:pb-12 mt-8 md:mt-0">
 
                 <form onSubmit={handleSubmit(onSubmit)} >
 
                     <div className="grid grid-cols-1 md:grid-cols-2 md:gap-6">
-                        <div class="relative mb-4 w-full">
-                            <label for="seller" class="leading-7 text-sm text-gray-600">Seller Name</label>
-                            <input type="text" id="seller" {...register("seller")} defaultValue={user?.displayName} class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                        <div className="relative mb-4 w-full">
+                            <label htmlFor="seller" className="leading-7 text-sm text-gray-600">Seller Name</label>
+                            <input type="text" id="seller" {...register("seller")} defaultValue={user?.displayName} className="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                         </div>
-                        <div class="relative mb-4 w-full">
-                            <label for="email" class="leading-7 text-sm text-gray-600">Seller Email</label>
-                            <input type="email" id="email" {...register("email")} defaultValue={user?.email} class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                        <div className="relative mb-4 w-full">
+                            <label htmlFor="email" className="leading-7 text-sm text-gray-600">Seller Email</label>
+                            <input type="email" id="email" {...register("email")} defaultValue={user?.email} className="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                         </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 md:gap-6">
-                        <div class="relative mb-4 w-full">
-                            <label for="name" class="leading-7 text-sm text-gray-600">Toys Name</label>
-                            <input type="text" id="name" {...register("name", { required: true })} class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                        <div className="relative mb-4 w-full">
+                            <label htmlFor="name" className="leading-7 text-sm text-gray-600">Toys Name</label>
+                            <input type="text" id="name" {...register("name", { required: true })} className="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                         </div>
-                        <div class="relative mb-4 w-full">
-                            <label for="photo" class="leading-7 text-sm text-gray-600">Photo URL</label>
-                            <input type="photo" id="photo" {...register("photo", { required: true })} class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                        <div className="relative mb-4 w-full">
+                            <label htmlFor="photo" className="leading-7 text-sm text-gray-600">Photo URL</label>
+                            <input type="photo" id="photo" {...register("photo", { required: true })} className="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                         </div>
                     </div>
 
 
                     <div className="grid grid-cols-1 md:grid-cols-3 md:gap-6">
-                        <div class="relative mb-4 w-full">
-                            <label for="price" class="leading-7 text-sm text-gray-600">Price</label>
-                            <input type="text" id="price" {...register("price", { required: true })} class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                        <div className="relative mb-4 w-full">
+                            <label htmlFor="price" className="leading-7 text-sm text-gray-600">Price</label>
+                            <input type="number" id="price" {...register("price", { required: true })} className="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                         </div>
-                        <div class="relative mb-4 w-full">
-                            <label for="rating" class="leading-7 text-sm text-gray-600">Rating</label>
-                            <input type="text" id="rating" {...register("rating", { required: true })} class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                        <div className="relative mb-4 w-full">
+                            <label htmlFor="rating" className="leading-7 text-sm text-gray-600">Rating</label>
+                            <input type="text" id="rating" {...register("rating", { required: true })} className="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                         </div>
-                        <div class="relative mb-4 w-full">
-                            <label for="quantity" class="leading-7 text-sm text-gray-600">Quantity</label>
-                            <input type="text" id="quantity" {...register("quantity", { required: true })} class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                        <div className="relative mb-4 w-full">
+                            <label htmlFor="quantity" className="leading-7 text-sm text-gray-600">Quantity</label>
+                            <input type="number" id="quantity" {...register("quantity", { required: true })} className="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                         </div>
                     </div>
 
 
-                    <div class="relative mb-4 w-full">
-                        <label for="quantity" class="leading-7 text-sm text-gray-600">Sub Category</label>
+                    <div className="relative mb-4 w-full">
+                        <label htmlFor="quantity" className="leading-7 text-sm text-gray-600">Sub Category</label>
 
                         <Select styles={customStyles}
                             defaultValue={selectedOption}
@@ -122,11 +124,11 @@ const AddToys = () => {
 
 
 
-                    <div class="relative mb-4">
-                        <label for="description" class="leading-7 text-sm text-gray-600">Description</label>
-                        <textarea id="description" {...register("description", { required: true })} class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 h-24 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                    <div className="relative mb-4">
+                        <label htmlFor="description" className="leading-7 text-sm text-gray-600">Description</label>
+                        <textarea id="description" {...register("description", { required: true })} className="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 h-24 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
                     </div>
-                    <input type="submit" class="mt-3 w-full text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg" value='Add a Toy' />
+                    <input type="submit" className="mt-3 w-full text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg" value='Add a Toy' />
                 </form>
 
             </div>

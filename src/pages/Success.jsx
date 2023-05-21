@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../hooks/useTitle';
 
 const Success = () => {
+    useTitle('Success')
     return (
         <div className='w-full h-screen flex items-center justify-center flex-col'>
             <div className="border px-5 md:px-10 py-20 mx-5">
@@ -12,7 +14,7 @@ const Success = () => {
                     Congratulations! You're now a superhero in our community.
                 </h2>
                 <div className="text-center">
-                    <Link to='/' class=" text-white bg-gray-800 border-0 py-3 px-6 focus:outline-none hover:bg-gray-900 rounded text-lg">Go to Home Page</Link>
+                    <Link to='/' className=" text-white bg-gray-800 border-0 py-3 px-6 focus:outline-none hover:bg-gray-900 rounded text-lg">Go to Home Page</Link>
                 </div>
             </div>
 

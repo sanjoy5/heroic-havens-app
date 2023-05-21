@@ -5,8 +5,10 @@ import Gallary from '../components/Gallary';
 import ToysTab from '../components/ToysTab';
 import DownloadApp from '../components/DownloadApp';
 import CallToAction from '../components/CallToAction';
+import useTitle from '../hooks/useTitle';
 
 const Home = () => {
+    useTitle('Home')
     return (
         <div>
             <Banner></Banner>

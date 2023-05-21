@@ -36,13 +36,13 @@ const Header = () => {
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="cursor-pointer lg:hidden">
-                            <AiOutlineBars className='text-xl mr-3' />
+                            <AiOutlineBars className='text-2xl mr-3' />
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 py-4 px-8 shadow bg-base-100 rounded-box w-52 space-y-2">
                             {links}
                         </ul>
                     </div>
-                    <Link className="text-xl md:text-3xl text-blue-500 font-bold">HeroicHavens</Link>
+                    <Link to='/' className="text-xl md:text-3xl text-blue-500 font-bold flex items-center gap-2"> <img src="https://i.ibb.co/6PqQRfj/shield.png" className='h-10 w-10 md:h-11 md:w-11' alt="" /> <span className='hidden md:block'>HeroicHavens</span></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 space-x-6 text-lg">

@@ -22,12 +22,12 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch('http://127.0.0.1:5000/all-toys')
+                loader: () => fetch('https://toy-marketplace-heroichavens-server.vercel.app/all-toys')
             },
             {
                 path: "/all-toys",
                 element: <AllToys></AllToys>,
-                loader: () => fetch('http://127.0.0.1:5000/all-toys')
+                loader: () => fetch('https://toy-marketplace-heroichavens-server.vercel.app/all-toys')
             },
             {
                 path: "/my-toys",
@@ -40,12 +40,12 @@ const router = createBrowserRouter([
             {
                 path: "/toys/:id",
                 element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://127.0.0.1:5000/toys/${params.id}`)
+                loader: ({ params }) => fetch(`https://toy-marketplace-heroichavens-server.vercel.app/toys/${params.id}`)
             },
             {
                 path: "/updatetoys/:id",
                 element: <PrivateRoute><UpdateToys></UpdateToys></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://127.0.0.1:5000/updatetoys/${params.id}`)
+                loader: ({ params }) => fetch(`https://toy-marketplace-heroichavens-server.vercel.app/updatetoys/${params.id}`)
             },
             {
                 path: "/blogs",

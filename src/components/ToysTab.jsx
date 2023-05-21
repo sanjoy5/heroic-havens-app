@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import Ratings from './Ratings';
-import { BsArrowRight } from 'react-icons/bs';
+
 import Toys from './Toys';
 
 const ToysTab = () => {
@@ -15,13 +14,13 @@ const ToysTab = () => {
     useEffect(() => {
         const filterCategoryToys = toysData.filter(toys => toys.subcategory.value === selectedCategory)
         setToys(filterCategoryToys)
-    }, [toys])
+    }, [selectedCategory, toysData])
 
     return (
         <div className='mt-16'>
-            <div class="flex flex-col text-center w-full mb-12">
-                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Shop by Category</h1>
-                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Explore our wide range of products, conveniently categorized for a seamless shopping experience</p>
+            <div className="flex flex-col text-center w-full mb-12">
+                <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Shop by Category</h1>
+                <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Explore our wide range of products, conveniently categorized for a seamless shopping experience</p>
             </div>
 
             <Tabs>

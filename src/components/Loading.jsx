@@ -3,7 +3,7 @@ import { RotatingLines } from 'react-loader-spinner'
 
 const Loading = () => {
     return (
-        <div className='h-96 w-full flex items-center justify-center'>
+        <div className='h-64 w-full flex items-center justify-center'>
             <RotatingLines
                 strokeColor="grey"
                 strokeWidth="5"
@@ -12,6 +12,7 @@ const Loading = () => {
                 visible={true}
             />
         </div>
+
     );
 };
 
