@@ -1,6 +1,6 @@
-# Chef Recipes
+# Heroic Havens
 
-This project was created with ReactJS and Express Js.
+This project was created with ReactJS, Express Js and Mongo DB.
 
 ## Features
 
