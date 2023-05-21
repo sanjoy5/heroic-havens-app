@@ -15,6 +15,7 @@ const AddToys = () => {
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
+        data.price = parseInt(data.price);
         data.subcategory = selectedOption
         console.log(data)
 
