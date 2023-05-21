@@ -22,7 +22,7 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch('https://toy-marketplace-heroichavens-server.vercel.app/all-toys')
+                loader: () => fetch('https://toy-marketplace-heroichavens-server.vercel.app/home-toys')
             },
             {
                 path: "/all-toys",
